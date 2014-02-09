@@ -8,15 +8,15 @@ class UsersController < ApplicationController
 		@user = User.new(reso_params)
 
 		if @user.save
-			redirect_to reservations_url
+			redirect_to restaurants_url, :notice => "Signed up!"
 		else
-			render :new
+			render "new"
 		end
 	end
 
 	private
 	def reso_params
-		params.require(:user).permit(:name, :username, :password, :password_confirmation, :email)
+		params.require(:user).permit(:email, :password, :password_confirmation, :name)
 	end
 
 

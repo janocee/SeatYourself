@@ -1,7 +1,10 @@
 <h1>Seat Yourself!</h1>
 <h3>This is where you can make your own reservations without the hassle of calling them yourself!</h3>
-
-<h2>Here's a list of all of the resturants!</h2>
+<%= link_to "New Restaurant", "/restaurants/new" %>
+<h2>Here's a list of all of the restaurants!</h2>
 <% @restaurants.each do |restaurant| %>
-<p><%= restaurant.name %>, <%= restaurant.address %>, <%= restaurant.open_at %>, <%= restaurant.close_at %></p>
+<p><%= restaurant.name %>, <%= restaurant.description %>, <%= restaurant.address %>, <%= restaurant.phone_number %>, <%= restaurant.num_of_seats %>, <%= restaurant.open_at %>, <%= restaurant.close_at %>,<%= restaurant.category %></p>
+<%= link_to (image_tag restaurant.url, width: '200'), restaurant %>
 <% end %>
+
+
