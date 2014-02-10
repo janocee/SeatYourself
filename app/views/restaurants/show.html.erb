@@ -1,5 +1,6 @@
 <%= link_to "Back to Restaurants", restaurants_url %> | <%= link_to "Edit", edit_restaurant_path(@restaurant) %> | <%= link_to "Delete", @restaurant, :confirm => "Are you sure you want to delete this restaurant?", :method => :delete %>
 
+
 <p><%= @restaurant.name %>, <%= @restaurant.description%>, <%= @restaurant.address %>, <%= @restaurant.phone_number %>,<%= @restaurant.num_of_seats %>, <%= @restaurant.open_at %>, <%= @restaurant.close_at %>, <%= @restaurant.category %></p>
 <%= image_tag @restaurant.url %>
 
@@ -35,6 +36,14 @@
         </ul>
       </div>
     <% end %>
+
+    <div class="field">
+      <%= f.label :party_number %><br />
+      <%= f.number_field :party_number %>   <!-- Makes an up an down arrow -->
+    </div>  
+
+    <!-- Have to add Time -->
+
 
     <div class="field">
       <%= f.label :comment %><br />

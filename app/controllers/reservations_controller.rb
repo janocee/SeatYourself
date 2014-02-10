@@ -5,6 +5,9 @@ class ReservationsController < ApplicationController
   before_filter :ensure_logged_in, :only => [:show, :create, :show, :update, :destroy]
   #only ensure logged in for the methods in the hash.
 
+  def index
+  end
+
   def show
     @reservation = Reservation.find(params[:id])
   end
@@ -36,7 +39,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:comment, :restaurant_id)
+    params.require(:reservation).permit(:comment, :restaurant_id, :party_number, :time_of_reso)
   end
 
   def load_restaurant
