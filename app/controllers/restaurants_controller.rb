@@ -4,6 +4,9 @@ class RestaurantsController < ApplicationController
 	#only ensure logged in for show
 	def index
 		@restaurants = Restaurant.all
+		@restaurants = Restaurant.search(params[:search])
+
+		# redirect_to restaurants_url, :notice => "Unable to find Restaurant"
 	end
 
 	def show
@@ -11,7 +14,6 @@ class RestaurantsController < ApplicationController
 
 		if current_user
 			@reservation = @restaurant.reservations.build
-
 		end
 	end
 
