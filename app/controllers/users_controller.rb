@@ -15,7 +15,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-	end 
+
+	end
 
 	private
 	def reso_params

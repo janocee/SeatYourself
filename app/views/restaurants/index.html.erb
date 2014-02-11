@@ -1,13 +1,17 @@
 <h1>Seat Yourself!</h1>
 <h3>This is where you can make your own reservations without the hassle of calling them yourself!</h3>
-<%= link_to "New Restaurant", "/restaurants/new" %>
-<%= link_to "Your list of Reservations", reservations_path %>
+<%= link_to "New Restaurant", "/restaurants/new" %> <br />
+
+<% if current_user %>
+<%= link_to "Your List of Reservations", user_path(current_user) %>
+<% end %>
+
 <h2>Here's a list of all of the restaurants!</h2>
 
 
 <!-- Search Function -->
 <%= form_tag restaurants_path, :method => 'get' do %>
-<p> 
+<p>
 	<%= text_field_tag :search, params[:search] %>
 	<%= submit_tag "Search", :name => nil %>
 </p>
