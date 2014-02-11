@@ -3,7 +3,7 @@
 <%= link_to "New Restaurant", "/restaurants/new" %> <br />
 
 <% if current_user %>
-<%= link_to "Your List of Reservations", user_path(current_user) %>
+<%= link_to "Your List of Reservations", restaurant_reservations_path(current_user) %>
 <% end %>
 
 <h2>Here's a list of all of the restaurants!</h2>

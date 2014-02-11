@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209201811) do
+ActiveRecord::Schema.define(version: 20140211175956) do
 
   create_table "reservations", force: true do |t|
     t.integer  "party_number"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140209201811) do
     t.string   "url"
     t.text     "description"
     t.string   "category"
+    t.string   "website"
   end
 
   create_table "users", force: true do |t|
