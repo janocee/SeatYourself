@@ -12,6 +12,10 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
+  def new
+    @reservation = @restaurant.reservation.new
+  end
+
   def create
     @reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user_id = current_user.id
