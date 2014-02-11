@@ -2,7 +2,8 @@
 
 <% @reservations.each do |reservation| %>
 <h3><%= reservation.restaurant.name %></h3>
-			<p><%= reservation.restaurant.address %></p>
+			<p>Restaurant Address: <%= reservation.restaurant.address %></p>
+			<p>Party Number: <%= reservation.party_number %></p>
 			<p>
 				<%= link_to "Cancel this reservation", restaurant_reservation_path(reservation.restaurant_id, reservation.id), :confirm => "are you sure you want to cancel this reservation?", :method => :delete %>
 			</p>
