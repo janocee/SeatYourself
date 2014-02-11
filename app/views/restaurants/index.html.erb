@@ -19,7 +19,15 @@
 <!-- End of Search Function -->
 
 <% @restaurants.each do |restaurant| %>
-<p><%= restaurant.name %>, <%= restaurant.description %>, <%= restaurant.address %>, <%= restaurant.phone_number %>, <%= restaurant.num_of_seats %>, <%= restaurant.open_at %>, <%= restaurant.close_at %>,<%= restaurant.category %></p>
+<p>
+	<strong>Name: </strong><%= restaurant.name %><br>
+	<strong>Description: </strong><%= restaurant.description %><br>
+	<strong>Address: </strong><%= restaurant.address %><br>
+	<strong>Phone Number: </strong><%= restaurant.phone_number %><br>
+	<strong>Number of total seats: </strong><%= restaurant.num_of_seats %><br>
+	<strong>Open: </strong><%= restaurant.open_at %><br>
+	<strong>Close: </strong><%= restaurant.close_at %><br>
+	<strong>Category: </strong><%= restaurant.category %></p>
 <%= link_to (image_tag restaurant.url, width: '200'), restaurant %>
 <% end %>
 

@@ -9,7 +9,7 @@
   <%= @restaurant.open_at %> <br />
   <%= @restaurant.close_at %> <br />
   <%= @restaurant.category %></p>
-<%= image_tag @restaurant.url %>
+  <%= link_to "Website", "#{@restaurant.url}", :target => "_blank" %>
 
 <% if current_user %>
 

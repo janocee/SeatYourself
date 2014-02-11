@@ -27,7 +27,7 @@
 		<%= f.text_field :description %>
 
 		<div class="field">
-		<%= f.label "# of Seats" %><br>
+		<%= f.label :number_of_seats %><br>
 		<%= f.number_field :num_of_seats %>
 	</div>
 
@@ -35,18 +35,22 @@
 		<%= f.label :open_at %><br>
 		<%= f.datetime_field :open_at %>
 	</div>
+
 	<div class="field">
 	<%= f.label :close_at %><br>
 	<%= f.datetime_field :close_at %>
 
 	<div class="field">
-	<%= f.label "url" %><br>
-	<%= f.text_field "url" %>
-
+	<%= f.label :image_url %><br>
+	<%= f.text_field :url %>
 	</div>
 
 	<div class="field">
-		<%= f.label "phone number" %><br>
+		<%= f.label :website %><br>
+		<%= f.text_field :url %>
+
+	<div class="field">
+		<%= f.label :phone_number %><br>
 		<%= f.text_field :phone_number %>
 
 	<div class="actions">
