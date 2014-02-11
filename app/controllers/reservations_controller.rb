@@ -30,7 +30,7 @@ class ReservationsController < ApplicationController
     # )
 
     if @reservation.save
-      redirect_to restaurants_path, notice: 'reservation created successfully'
+      redirect_to restaurants_path, notice: 'Reservation created successfully!'
     else
       render :action => :show
     end
@@ -39,6 +39,8 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+
+    redirect_to user_path(current_user), notice: 'Reservation deleted successfully!'
   end
 
   private
