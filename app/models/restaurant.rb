@@ -13,6 +13,8 @@ class Restaurant < ActiveRecord::Base
 		end
 	end
 
+
+	def availability(party_size)
+		reservations.sum(:party_number) + party_size <= num_of_seats
+	end
 end
-
-

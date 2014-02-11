@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = @restaurant.reservations.build(reservation_params)
-    @reservation.user_id = current_user.id
+    @reservation.user = current_user
 
     # Check out this article on [.build](http://stackoverflow.com/questions/783584/ruby-on-rails-how-do-i-use-the-active-record-build-method-in-a-belongs-to-rel)
     # You could use a longer alternate syntax if it makes more sense to you
@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to restaurants_path, notice: 'Reservation created successfully!'
     else
-      render :action => :show
+      render :new
     end
   end
 
