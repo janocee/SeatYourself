@@ -1,14 +1,13 @@
 <%= link_to "Back to Restaurants", restaurants_url %> | <%= link_to "Edit", edit_restaurant_path(@restaurant) %> | <%= link_to "Delete", @restaurant, :confirm => "Are you sure you want to delete this restaurant?", :method => :delete %>
 
-
-<p><%= @restaurant.name %> <br />
-  <%= @restaurant.description%> <br />
-  <%= @restaurant.address %> <br />
-  <%= @restaurant.phone_number %> <br />
-  <%= @restaurant.num_of_seats %> <br />
-  <%= @restaurant.open_at %> <br />
-  <%= @restaurant.close_at %> <br />
-  <%= @restaurant.category %></p>
+<p><strong>Name: </strong><%= @restaurant.name %> <br />
+  <strong>Description: </strong><%= @restaurant.description%> <br />
+  <strong>Address: </strong><%= @restaurant.address %> <br />
+  <strong>Phone Number: </strong><%= @restaurant.phone_number %> <br />
+  <strong>Total Capacity: </strong><%= @restaurant.num_of_seats %> <br />
+  <strong>Open: </strong><%= @restaurant.open_at %> <br />
+  <strong>Close: </strong><%= @restaurant.close_at %> <br />
+  <strong>Category: </strong><%= @restaurant.category %></p>
   <%= link_to "Website", "#{@restaurant.url}", :target => "_blank" %>
 
 <% if current_user %>
