@@ -17,6 +17,12 @@
     <% end %>
 
     <div class="field">
+      <%= f.label :time_of_reso %><br/>
+      <%= f.select :time_of_reso, @restaurant.hours %>
+
+    </div>
+
+    <div class="field">
       <%= f.label :party_number %><br />
       <%= f.number_field :party_number %>
     </div>

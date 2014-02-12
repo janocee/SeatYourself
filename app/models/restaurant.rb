@@ -17,4 +17,21 @@ class Restaurant < ActiveRecord::Base
 	def availability(party_size)
 		reservations.sum(:party_number) + party_size <= num_of_seats
 	end
+
+  def time_display(hour)
+    if hour > 0 && hour < 12
+      "#{hour}:00 AM"
+    elsif hour == 12
+      "#{hour}:00 PM"
+    elsif hour > 12
+      "#{hour-12}:00 PM"
+    else
+      "12:00 AM"
+    end
+  end
+
+	def hours
+		(open_at..close_at).to_a.map { |h| [ time_display(h), h] }
+		#[,h, h] first h is what gets displayed, second h is what gets passed back to the server
+	end
 end
