@@ -1,5 +1,4 @@
-SeatYourself
-==
+== Seat Yourself
 
 Bitmaker Labs - assignment
   Open Table clone
